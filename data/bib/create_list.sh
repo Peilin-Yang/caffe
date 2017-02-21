@@ -9,7 +9,7 @@ do
   if [ -f $dst_file ]
   then
     rm -f $dst_file
-  fi
+  fi 
   for name in VOC2007 VOC2012
   do
     if [[ $dataset == "test" && $name == "VOC2012" ]]
