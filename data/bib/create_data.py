@@ -52,7 +52,7 @@ def gen_data(args):
             --anno-type=%s --label-map-file=%s --min-dim=%d --max-dim=%d \
             --resize-width=%d --resize-height=%d --check-label %s \
             %s %s.txt \
-            %s/%s/%s/%s__%s examples/%s' 
+            %s/%s/%s/%s_%s_%s examples/%s' 
             % (args.anno_type, args.mapfile, args.min_dim, args.max_dim, 
                 args.width, args.height, args.extra_cmd, args.data_dir, 
                 dataset, args.data_dir, args.dataset_name, args.db, 
