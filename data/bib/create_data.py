@@ -42,8 +42,8 @@ def gen_list(data_dir, redo=False):
             img_index = load_image_set_index(data_dir, dataset)
             with open('%s.txt' % dataset, 'w') as f:
                 for index in img_index:
-                    f.write('%s %s\n' % (image_path_from_index(index), 
-                        annotation_path_from_index(index)))
+                    f.write('%s %s\n' % (image_path_from_index(dataset, index), 
+                        annotation_path_from_index(dataset, index)))
         subprocess.call(['../../build/tools/get_image_size', data_dir, 'testing.txt', 'testing_name_size.txt'])
 
 def main(args):
