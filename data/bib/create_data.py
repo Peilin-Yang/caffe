@@ -2,6 +2,10 @@ import os,sys
 import argparse
 import subprocess
 
+def add_path(path):
+    if path not in sys.path:
+        sys.path.insert(0, path)
+
 def image_path_from_index(image_set, index):
     """
     Construct an image path from the image's "index" identifier.
@@ -59,6 +63,9 @@ def gen_data(args):
                 args.dataset_name, dataset, args.db, args.dataset_name)], shell=True)
 
 def main(args):
+    this_dir = os.path.dirname(__file__)
+    caffe_path = os.path.join(this_dir, '..', '..', 'python')
+    add_path(caffe_path)
     gen_list(args.data_dir, args.redo_list)
     gen_data(args)
 
